@@ -22,7 +22,7 @@ const salaryRoute = require('./routes/salary.route')
 
 //Vehicle
 const vehicleRoute = require('./routes/vehicle.route')
- 
+
 //stock
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin/auth");
@@ -59,29 +59,29 @@ const port = process.env.PORT || 5000;
 
 //dependencies used by the app
 app.use(cors({
-    origin: [
+  origin: [
     'http://localhost:3000'
   ],
   credentials: true
-    })
+})
 );
 app.use(express.json())
 const urlEncodedParser = express.urlencoded({ extended: false });
 app.listen(port, (error) => {
-    if(error) console.log(error);
-    console.log('Server listening to PORT '+ port);
+  if (error) console.log(error);
+  console.log('Server listening to PORT ' + port);
 });
 
 //customers
-app.use('/customers',urlEncodedParser,customerRouter);
+app.use('/customers', urlEncodedParser, customerRouter);
 app.use('/customer', authRouter);
 
 //branches
 app.use("/branch", branchRouter);
 
 //employee
-app.use("/employee",employee);
-app.use("/employeeProblem",employeeproblem);
+app.use("/employee", employee);
+app.use("/employeeProblem", employeeproblem);
 
 //Salary
 app.use('/salaries', salaryRoute);
@@ -92,7 +92,7 @@ app.use('/vehicles', vehicleRoute);
 //stock 
 app.use("/public", express.static(path.join(__dirname, "uploads")));
 app.use("/api", authRoutes);
-app.use("/api", adminRoutes);
+app.use("/api", urlEncodedParser, adminRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 //app.use("/api", cartRoutes);
@@ -104,9 +104,9 @@ app.use("/api", pageRoutes);
 
 
 //constructions
-app.use("/customizedReq",customizedRouter);
-app.use("/systemizedReq",systemizedRouter);
-app.use("/systemizedDesig",systemizedDRouter);
+app.use("/customizedReq", customizedRouter);
+app.use("/systemizedReq", systemizedRouter);
+app.use("/systemizedDesig", systemizedDRouter);
 
 //Orders
 // app.use('/api', order);
