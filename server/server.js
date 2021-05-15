@@ -91,6 +91,7 @@ app.use('/vehicles', vehicleRoute);
 
 //stock 
 app.use("/public", express.static(path.join(__dirname, "uploads")));
+//app.use(express.static('public'));
 app.use("/api", authRoutes);
 app.use("/api", urlEncodedParser, adminRoutes);
 app.use("/api", categoryRoutes);

@@ -15,6 +15,9 @@ import PrintProductsPreview from "./printPreview";
 import ReactToPrint, { PrintContextConsumer } from "react-to-print";
 import { jsPDF } from 'jspdf'
 import 'jspdf-autotable'
+// const multer = require("multer");
+// const shortid = require("shortid");
+// const path = require("path");
 
 import "./itc19988870_style.css";
 
@@ -202,7 +205,7 @@ const Products = (props) => {
         handleClose={handleCloseProductDetailsModal}
         modalTitle={"Product Details"}
         size="lg"
-
+        hideButtons={true}
       >
         <Row>
           <Col md="6">
@@ -236,7 +239,7 @@ const Products = (props) => {
             <div style={{ display: "flex" }}>
               {productDetails.productPictures.map((picture) => (
                 <div className="productImgContainer">
-                  <img src={picture.img} alt="" />
+                  <img src={`http://localhost:3000/${picture.img}`} alt="" />
                 </div>
               ))}
             </div>
