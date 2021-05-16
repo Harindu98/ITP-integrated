@@ -15,13 +15,12 @@ const NewModal = (props) => {
       <Modal.Body>{props.children}</Modal.Body>
       {props.showButtons}
       <Modal.Footer>
-        {props.hideButtons ? (
-          // props.buttons.map((btn, index) => (
-          //   <Button key={index} variant={btn.color} onClick={btn.onClick}>
-          //     {btn.label}
-          //   </Button>
-          // ))
-          null
+        {props.buttons ? (
+          props.buttons.map((btn, index) => (
+            <Button key={index} variant={btn.color} onClick={btn.onClick}>
+              {btn.label}
+            </Button>
+          ))
         ) : (
           <Button
             variant="primary"

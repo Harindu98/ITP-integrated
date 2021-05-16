@@ -47,6 +47,7 @@ const Header = (props) => {
     );
   };
 
+  console.log("auth.authenticate",auth.authenticate)
   return (
     <Navbar
       collapseOnSelect

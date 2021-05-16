@@ -183,11 +183,11 @@ function App() {
           component={OrderDetailsPage}
         />
         <Route
-          path="/:productSlug/:productId/p"
+          path="/productDetails/:productId"
           component={ProductDetailsPage}
           exact
         />
-        <Route path="productList/:slug" component={ProductListPage} exact />
+        <Route path="/productList" component={ProductListPage} exact />
 
         {/* stock          
      
