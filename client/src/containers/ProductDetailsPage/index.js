@@ -70,7 +70,7 @@ const ProductDetailsPage = (props) => {
                   props.history.push(`/cart`);
                 }}
               />
-              <MaterialButton
+              {/* <MaterialButton
                 title="BUY NOW"
                 bgColor="#fb641b"
                 textColor="#ffffff"
@@ -78,7 +78,7 @@ const ProductDetailsPage = (props) => {
                   marginLeft: "5px"
                 }}
                 icon={<AiFillThunderbolt />}
-              />
+              /> */}
             </div>
           </div>
         </div>
